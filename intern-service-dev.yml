@@ -1,0 +1,11 @@
+spring:
+  profiles: dev  
+
+datasource:
+  url: jdbc:h2:file:./data/dev-db
+  username: dev-user
+  password: dev-pass
+
+eureka:
+  instance:
+    prefer-ip-address: false  
