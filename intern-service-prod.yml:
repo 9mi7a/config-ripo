@@ -1,0 +1,13 @@
+spring:
+  profiles: prod  # Activates with 'prod' profile
+
+datasource:
+  url: localhost:27017/internship
+  username: ${DB_USER:}
+  password: ${DB_PASSWORD:}
+
+# Prod-specific overrides
+eureka:
+  instance:
+    prefer-ip-address: true  # Use IP in prod
+    lease-renewal-interval-in-seconds: 10
