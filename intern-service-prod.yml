@@ -1,10 +1,29 @@
 spring:
-  profiles: prod  # Activates with 'prod' profile
+  config:
+    activate:
+      on-profile: prod
+  
+  data:
+    mongodb:
+      uri: ${MONGO_URI:localhost:27017/internship}
+      # For MongoDB Atlas or external MongoDB
+      # uri: mongodb+srv://username:password@cluster.mongodb.net/database?retryWrites=true&w=majority
+  
+  h2:
+    console:
+      enabled: false
+  
+  jpa:
+    hibernate:
+      ddl-auto: none # Not needed for MongoDB
+  
+  liquibase:
+    enabled: false # Not needed for MongoDB
 
-datasource:
-  url: localhost:27017/internship
-  username: ${DB_USER:}
-  password: ${DB_PASSWORD:}
+# datasource:
+#   url: localhost:27017/internship
+#   username: ${DB_USER:}
+#   password: ${DB_PASSWORD:}
 
 # Prod-specific overrides
 eureka:
