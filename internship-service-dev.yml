@@ -3,7 +3,7 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:h2:file:./data/internshipDB # In-memory database
+    url: jdbc:h2:file:./data/internshipDB1 # In-memory database
     driver-class-name: org.h2.Driver
     username: sa
     password: password
